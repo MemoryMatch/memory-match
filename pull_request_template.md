@@ -3,7 +3,7 @@
 Did this break anything?
 
 - [ ] No
-- [ ]  Yes
+- [ ] Yes
 
 Type of change
 
