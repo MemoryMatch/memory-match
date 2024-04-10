@@ -41,8 +41,6 @@ export const GameBoard: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-  }, [flippedCards]);
 
   return (
     <div className="game-board">
