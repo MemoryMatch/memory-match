@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './Welcome.css';
 import Instructions from 'Components/Instructions/Instructions';
 
