@@ -7,7 +7,38 @@ export const GameBoard: React.FC = () => {
   const [cards, setCards] = useState<CardType[]>(generateCards());
   const [flippedCards, setFlippedCards] = useState<CardType[]>([]);
 
-  const handleCardClick = (card: CardType) => {
+  const handleCardClick = (clickedCard: CardType) => {
+    if (clickedCard.isFlipped || clickedCard.isMatched) return;
+
+    const updatedCards = cards.map(card =>
+      card.id === clickedCard.id ? { ...card, isFlipped: true } : card
+    );
+    setCards(updatedCards);
+    const updatedFlippedCards = [...flippedCards, { ...clickedCard, isFlipped: true }];
+    setFlippedCards(updatedFlippedCards);
+
+    if (updatedFlippedCards.length === 2) {
+      const [firstCard, secondCard] = updatedFlippedCards;
+      if (firstCard.image === secondCard.image) {
+        setCards(prevCards =>
+          prevCards.map(card =>
+            card.image === firstCard.image ? { ...card, isMatched: true } : card
+          )
+        );
+        setFlippedCards([]);
+      } else {
+        setTimeout(() => {
+          setCards(prevCards =>
+            prevCards.map(card =>
+              card.id === firstCard.id || card.id === secondCard.id
+                ? { ...card, isFlipped: false }
+                : card
+            )
+          );
+          setFlippedCards([]);
+        }, 1000);
+      }
+    }
   };
 
   useEffect(() => {

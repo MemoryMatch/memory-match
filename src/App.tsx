@@ -9,7 +9,7 @@ function App() {
     <main className="App">
       <Routes>
         <Route path="/" element={<Welcome />}/>
-        <Route path="/game" element={<GameBoard/>}/>
+        <Route path="/playgame/:theme" element={<GameBoard/>}/>
       </Routes>
     </main>
   );
