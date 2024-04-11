@@ -1,27 +1,25 @@
 import './Welcome.css';
 import Instructions from 'Components/Instructions/Instructions';
+import ThemeForm from 'Components/ThemeForm/ThemeForm';
+import { Link } from "react-router-dom";
+
 
 const Welcome = () => {
+
   return (
     <section className="WelcomePage">
       <header>
         <h2>Welcome to Memory Match!</h2>
       </header>
         <Instructions />
-      <div className="dropdown">
-        <form action="/game">
-          <select name="theme">
-            <option value="random">Select a Theme</option>
-            <option value="animals">Animals</option>
-            <option value="flowers">Flowers</option>
-            <option value="fruits">Fruits</option>
-          </select>
-          <br></br>
-        <input type="submit" value="Play Game!"></input>
-        </form>
-      </div>
+        <ThemeForm />
+        <Link to={{pathname: `/game/${(JSON.parse(localStorage.getItem("selectedTheme") || '{}')).value || "random"}`}}>Play Game!</Link>
     </section>
   );
 }
+
+    //   // look into "onSubmit" to make the route look like /game/theme
+    //   // instead of /game?theme=something
+    //   Link to="something"
 
 export default Welcome;
