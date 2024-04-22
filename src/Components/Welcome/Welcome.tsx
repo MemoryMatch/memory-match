@@ -18,8 +18,4 @@ const Welcome = () => {
   );
 }
 
-    //   // look into "onSubmit" to make the route look like /game/theme
-    //   // instead of /game?theme=something
-    //   Link to="something"
-
 export default Welcome;
