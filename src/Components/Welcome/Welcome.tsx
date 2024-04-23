@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Welcome = () => {
 
   return (
-    <section className="WelcomePage">
+    <section className="welcome-page">
       <header>
         <h2>Welcome to Memory Match!</h2>
       </header>
