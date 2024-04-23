@@ -30,6 +30,7 @@ const ThemeForm = () => {
         options={options} 
         defaultValue={selectedValue()} 
         onChange={changeTheme}
+        className="dropdown-selector"
       />
     </div>
   );

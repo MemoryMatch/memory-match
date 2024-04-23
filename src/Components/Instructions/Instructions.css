@@ -13,3 +13,8 @@
   left: 40%;
   margin-left: -80px;
 }
+
+.instructions {
+  border-radius: 15px;
+  margin-left: 20px;
+}

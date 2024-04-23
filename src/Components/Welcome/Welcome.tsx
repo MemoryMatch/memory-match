@@ -9,11 +9,15 @@ const Welcome = () => {
   return (
     <section className="welcome-page">
       <header>
-        <h2>Welcome to Memory Match!</h2>
+        <h2 className='welcome-text'>Welcome to Memory Match!</h2>
       </header>
+      <div className='instructions-theme-container'>
         <Instructions />
         <ThemeForm />
-        <Link to={{pathname: `/game/${(JSON.parse(localStorage.getItem("selectedTheme") || '{}')).value || "random"}`}}>Play Game!</Link>
+      </div>
+      <div className='link-container'>
+        <Link className="play-game-link" to={{pathname: `/game/${(JSON.parse(localStorage.getItem("selectedTheme") || '{}')).value || "random"}`}}>Play Game!</Link>
+        </div>
     </section>
   );
 }
