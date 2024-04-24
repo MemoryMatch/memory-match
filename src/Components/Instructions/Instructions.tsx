@@ -22,7 +22,7 @@ const Instructions = () => {
 
   return (
     <section>
-      <button type="button" onClick={openPopup} className="instructions">Show Instructions</button>
+      <button type="button" onClick={openPopup} className="instructions">?</button>
       <dialog id="popup">
         <h3>Instructions</h3>
         <p>You will see a series of cards on your screen. They will be facing you for only a few seconds.
