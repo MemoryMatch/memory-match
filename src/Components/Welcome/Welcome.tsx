@@ -17,7 +17,7 @@ const Welcome = () => {
       </div>
       <div className='link-container'>
         <Link className="play-game-link" to={{pathname: `/game/${(JSON.parse(localStorage.getItem("selectedTheme") || '{}')).value || "random"}`}}>Play Game!</Link>
-        </div>
+      </div>
     </section>
   );
 }
