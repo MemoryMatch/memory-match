@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />}/>
         <Route path="/game/:theme" element={<GameBoard/>}/>
-        <Route path='/game_over' element={<EndGame/>}/>
+        <Route path='/game-over' element={<EndGame/>}/>
       </Routes>
     </main>
   );
